@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(33, 87, 33);
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.accordion { 
+    max-width: 800px;
+    min-width: 250px;
+}
+
+.contentBx {
+    position: relative;
+    margin: 10px 20px;
+}
+
+.label {
+    position: relative;
+    padding: 10px 20px;
+    background-color: rgb(158, 45, 45);
+    cursor: pointer;
+}
+
+.label::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.content {
+    position: relative;
+    background-color: rgb(21, 192, 49);
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+}
+
+.contentBx.active .content {
+    height: 150px;
+    padding: 10px;
+}
+
+.contentBx.active .label::before {
+    content: '-';
+}
+
+.contentBx.active .label {
+    background-color: rgb(204, 98, 98);
+}
